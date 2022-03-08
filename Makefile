@@ -15,14 +15,14 @@
 NAME		=	push_swap
 
 SRC_DIR		=	
-OBJ_DIR		=	
+OBJ_DIR		=	obj/
 
 
 HDR			=	
 LIBFT_HDR	=	
 
 
-SRC_NAMES	=   push_swap data list list_steps ft_atoi ft_strncmp rotate sorters
+SRC_NAMES	=   push_swap data list list_steps rotate sorters ft_atoi ft_strncmp ft_memset ft_split ft_strlcpy ft_strlen ft_memcpy ft_isdigit
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_NAMES)))
 OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_NAMES)))
@@ -34,6 +34,7 @@ OPFLAGS		=	-O2
 
 RM      	=	rm -f
 AR			=	ar rcs
+MK			=	mkdir -p
 
 all: $(NAME)
 
@@ -42,6 +43,7 @@ $(NAME): $(OBJ) $(LIBFT)
 
 
 $(OBJ):	$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HDR)
+			@${MK} ${OBJ_DIR}
 			$(CC) $(CFLAGS) $(OPFLAGS) -c $< -o $@	-MD
 
 include $(wildcard $(D_FILES))

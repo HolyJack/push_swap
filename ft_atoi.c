@@ -10,16 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
+#include "push_swap.h"
 
 int	ft_atoi(const char *s)
 {
-	int		buf;
+	long	buf;
 	int		sign;
 	char	*str;
 
@@ -41,6 +36,8 @@ int	ft_atoi(const char *s)
 		buf *= 10;
 		buf += (*str - '0');
 		str++;
+		if ((sign == 1 && buf > 2147483647) || buf > 2147483648)
+			return (0);
 	}
 	return (sign * buf);
 }

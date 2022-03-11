@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:19:03 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/04 19:19:03 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 03:12:55 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap(t_list **head)
 {
-	t_list *first;
-	t_list *second;
+	t_list	*first;
+	t_list	*second;
 
 	if (!*head || !(*head)->next)
 		return ;
@@ -28,7 +28,7 @@ void	swap(t_list **head)
 
 void	push(t_list **fhead, t_list **shead, int *flen, int *slen)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!*shead)
 		return ;
@@ -40,9 +40,9 @@ void	push(t_list **fhead, t_list **shead, int *flen, int *slen)
 
 void	reverse(t_list **head)
 {
-	t_list *first;
-	t_list *second;
-	t_list *last;
+	t_list	*first;
+	t_list	*second;
+	t_list	*last;
 
 	if (!*head || !(*head)->next)
 		return ;
@@ -58,9 +58,9 @@ void	reverse(t_list **head)
 
 void	reverse_rotate(t_list **head)
 {
-	t_list *first;
-	t_list *last;
-	t_list *slast;
+	t_list	*first;
+	t_list	*last;
+	t_list	*slast;
 
 	if (!*head || !(*head)->next)
 		return ;
@@ -79,7 +79,8 @@ void	reverse_rotate(t_list **head)
 
 void	make_step(t_data *data, char *name)
 {
-	printf("%s\n", name);
+	if (!write(1, name, ft_strlen(name)) || !write(1, "\n", 1))
+		return ;
 	if (ft_strncmp(name, "sa", 2) == 0 || ft_strncmp(name, "ss", 2) == 0)
 		swap(&(data->list_a));
 	if (ft_strncmp(name, "sb", 2) == 0 || ft_strncmp(name, "ss", 2) == 0)
@@ -96,8 +97,4 @@ void	make_step(t_data *data, char *name)
 		reverse_rotate(&(data->list_a));
 	if (ft_strncmp(name, "rrb", 3) == 0 || ft_strncmp(name, "rrr", 3) == 0)
 		reverse_rotate(&(data->list_b));
-	//printf("a :");
-	//print_list(data->list_a);
-	//printf("b :");
-	//print_list(data->list_b);
 }

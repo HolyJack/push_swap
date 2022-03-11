@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_init.c                                        :+:      :+:    :+:   */
+/*   list1.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:18:43 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/04 19:18:43 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 03:12:10 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_list	*new_list(int val)
 
 void	free_list(t_list *list)
 {
-	t_list *next;
+	t_list	*next;
 
 	while (list)
 	{
@@ -39,7 +39,7 @@ void	free_list(t_list *list)
 
 void	push_back(t_list **head, t_list *new_elem)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!new_elem)
 		return ;
@@ -63,24 +63,15 @@ void	push_front(t_list **head, t_list *new_elem)
 	*head = new_elem;
 }
 
-t_list	*pop_head(t_list **head)
+int	lstlen(t_list *list)
 {
-	t_list *tmp;
+	int	len;
 
-	if (!*head)
-		return NULL;
-	tmp = *head;
-	*head = (*head)->next;
-	tmp->next = NULL;
-	return (tmp);
-}
-
-void print_list(t_list *head) 
-{
-	while (head)
+	len = 0;
+	while (list)
 	{
-		printf("%d ", head->val);
-		head = head->next;
+		len++;
+		list = list->next;
 	}
-	printf("\n");
+	return (len);
 }

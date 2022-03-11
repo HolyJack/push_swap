@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   data_init.c                                        :+:      :+:    :+:   */
+/*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:23:07 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/04 19:23:07 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 02:54:44 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_data *new_data(void)
+t_data	*new_data(void)
 {
-	t_data *tmp;
+	t_data	*tmp;
 
 	tmp = malloc(sizeof(t_data));
 	if (!tmp)
@@ -25,12 +25,13 @@ t_data *new_data(void)
 	tmp->list_b = NULL;
 	tmp->min = 0;
 	tmp->max = 0;
+	tmp->flag = 0;
 	tmp->len_a = 0;
 	tmp->len_b = 0;
 	return (tmp);
 }
 
-void free_data(t_data *data)
+void	free_data(t_data *data)
 {
 	free_list(data->list_a);
 	data->list_a = NULL;

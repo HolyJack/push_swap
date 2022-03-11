@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   find_max.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 14:00:31 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 02:53:15 by ejafer           ###   ########.fr       */
+/*   Created: 2022/03/11 02:36:53 by ejafer            #+#    #+#             */
+/*   Updated: 2022/03/11 03:06:41 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
-{
-	char	*str1;
-	char	*str2;
+#include "push_swap.h"
 
-	str1 = (char *) s1;
-	str2 = (char *) s2;
-	if (n == 0)
-		return (0);
-	while (n-- > 0)
+int	find_max(t_list *list)
+{
+	int	max;
+
+	max = list->val;
+	while (list)
 	{
-		if (*str1 != *str2)
-			return ((unsigned char) *str1 - (unsigned char) *str2);
-		if (*str1 == '\0')
-			return (0);
-		str1++;
-		str2++;
+		if (list->val > max)
+			max = list->val;
+		list = list->next;
 	}
-	return (0);
+	return (max);
 }

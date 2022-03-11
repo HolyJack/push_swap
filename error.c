@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/11 14:00:31 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 02:53:15 by ejafer           ###   ########.fr       */
+/*   Created: 2022/03/11 03:01:10 by ejafer            #+#    #+#             */
+/*   Updated: 2022/03/11 03:01:22 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(const char *s1, const char *s2, int n)
-{
-	char	*str1;
-	char	*str2;
+#include "push_swap.h"
 
-	str1 = (char *) s1;
-	str2 = (char *) s2;
-	if (n == 0)
-		return (0);
-	while (n-- > 0)
-	{
-		if (*str1 != *str2)
-			return ((unsigned char) *str1 - (unsigned char) *str2);
-		if (*str1 == '\0')
-			return (0);
-		str1++;
-		str2++;
-	}
-	return (0);
+void	error(void)
+{
+	if (write(1, "Error\n", 7))
+		exit(0);
+	exit(0);
 }

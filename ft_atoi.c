@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 15:43:42 by ejafer            #+#    #+#             */
-/*   Updated: 2021/10/18 18:30:40 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 02:54:00 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@ int	ft_atoi(const char *s)
 
 	sign = 1;
 	str = (char *) s;
-	while (*str == ' ' || *str == '\t' || *str == '\n'
-		|| *str == '\f' || *str == '\r' || *str == '\v')
-		str++;
 	if (*str == '-')
 	{
 		sign = -1;

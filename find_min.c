@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 02:36:56 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:06:31 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:11:43 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ int	find_min(t_list *list)
 		list = list->next;
 	}
 	return (min);
+}
+
+int MIN(int a, int b)
+{
+	if (a > b)
+		return (b);
+	return (a);
 }

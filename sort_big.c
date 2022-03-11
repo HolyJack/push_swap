@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:44:36 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:30:21 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:18:45 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,23 @@ void	push_back_to_a(t_data *data)
 }
 
 void	switch_min_max(t_data *data)
-{
+{	
+	int		i;
+	char	*action;
+	t_list	*tmp;
+
+	i = 0;
+	tmp = data->list_a;
+	while (tmp->val != data->min)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	action = "ra";
+	if (data->len_a - i < i)
+		action = "rra";
 	while (data->list_a->val != data->min)
-		make_step(data, "ra");
+		make_step(data, action);
 	make_step(data, "sa");
 }
 

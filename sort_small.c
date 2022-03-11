@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 03:20:37 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:34:56 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:48:33 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,6 @@ void	sort_small(t_data *data)
 			make_step(data, "sa");
 		if (!is_rotated(data->list_b))
 			make_step(data, "sb");
-		if (!is_sorted(data->list_a))
-		{
-			if (find_rotatepnt(data->list_a) == 1)
-				make_step(data, "ra");
-			else
-				make_step(data, "rra");
-		}
 		while (data->len_b)
 		{
 			make_step(data, "pa");

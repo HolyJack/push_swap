@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 02:36:53 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:06:41 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:11:49 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,11 @@ int	find_max(t_list *list)
 		list = list->next;
 	}
 	return (max);
+}
+
+int MAX(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }

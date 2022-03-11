@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:07:27 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:20:17 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:08:27 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ t_list	*pop_head(t_list **head);
 t_list	*copy_list(t_list *list);
 t_list	*copy_sublist(t_list *list, int start, int end);
 t_list	*pop_val(t_list **head, int val);
+int		in_list(t_list *list, int val);
 int		find_max(t_list *list);
 int		find_med(t_list *list);
 int		find_min(t_list *list);
@@ -74,6 +75,10 @@ int		find_rotatepnt(t_list *list);
 void	make_rotation(t_data *data);
 void	sort_small(t_data *data);
 void	sort_main(t_data *data);
+t_list	*biggest_sorted(t_data *data);
+void	score(t_data *data);
+int		MAX(int a, int b);
+int		MIN(int a, int b);
 
 int		ft_atoi(const char *s);
 int		ft_isdigit(int c);

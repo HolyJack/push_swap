@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 03:21:20 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:36:50 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:24:06 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ t_list	*sorted_subseq(t_list *list)
 	t_list	*stmp;
 	t_list	*score;
 
+	if (!list)
+		return (NULL);
 	i = 0;
 	score = NULL;
 	while (i++ < lstlen(list))

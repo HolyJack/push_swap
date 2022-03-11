@@ -6,11 +6,38 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 14:56:41 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:31:18 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 04:09:30 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void min_ij(t_data *data)
+{
+	int r_i;
+	int r_j;
+	int i;
+	int j;
+
+	i = data->i;
+	j = data->j;
+	r_i = data->len_a - data->i;
+	r_j = data->len_b - data->j;
+	if ((MAX(i, j) ) <= (MIN(r_i + j, i + r_j)) && (MAX(i, j)) <= (MAX(r_i, r_j)))
+		return ;
+	else if (MAX(r_i, r_j) <= (MIN(i + r_j, r_i + j)))
+	{
+		data->i = -r_i;
+		data->j = -r_j;
+	}
+	else
+	{
+		if (r_i < i)
+			data->i = -r_i;
+		else
+			data->j = -r_j;
+	}
+}
 
 int	find_rotatepnt(t_list *list)
 {

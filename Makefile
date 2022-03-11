@@ -6,7 +6,7 @@
 #    By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:14:01 by ejafer            #+#    #+#              #
-#    Updated: 2022/03/11 03:02:45 by ejafer           ###   ########.fr        #
+#    Updated: 2022/03/11 04:10:56 by ejafer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ HDR			=
 LIBFT_HDR	=	
 
 
-SRC_NAMES	=   push_swap data list array error validation list_steps rotate sorters find_min find_med find_max ft_atoi ft_strncmp ft_memset ft_split ft_strlcpy ft_strlen ft_memcpy ft_isdigit
+SRC_NAMES	=   push_swap data list1 list2 array error validation sort_small sort_big sort_big_push_back find_sorted_subseq list_steps rotate  find_min find_med find_max ft_atoi ft_strncmp ft_memset ft_split ft_strlcpy ft_strlen ft_memcpy ft_isdigit
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_NAMES)))
 OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_NAMES)))

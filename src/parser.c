@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_min.c                                         :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 02:36:56 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 04:11:43 by ejafer           ###   ########.fr       */
+/*   Created: 2022/03/11 21:18:13 by ejafer            #+#    #+#             */
+/*   Updated: 2022/03/11 22:33:42 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min(t_list *list)
+t_data	*parser(char **argv, int argc)
 {
-	int	min;
+	char	**array;
+	t_data	*data;
 
-	min = list->val;
-	while (list)
-	{
-		if (list->val < min)
-			min = list->val;
-		list = list->next;
+	array = argv;
+	if (arrlen(array) == 1)
+		array = ft_split(argv[0], ' ');
+	data = new_data();
+	data->list_a = array_tolist(array);
+	data->len_a = lstlen(data->list_a);
+	if (duplicates(data->list_a) || !is_valid(array))
+	{	
+		if (argc == 1)
+			free_array(array);
+		free_data(data);
+		error();
 	}
-	return (min);
-}
-
-int MIN(int a, int b)
-{
-	if (a > b)
-		return (b);
-	return (a);
+	if (argc == 1)
+		free_array(array);
+	return (data);
 }

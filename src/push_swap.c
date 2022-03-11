@@ -6,36 +6,11 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:08:12 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 04:32:16 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 21:18:06 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_data	*parser(char **argv, int argc)
-{
-	int		len;
-	char	**array;
-	t_data	*data;
-
-	array = argv;
-	if (argc == 1)
-		array = ft_split(argv[0], ' ');
-	len = arrlen(array);
-	data = new_data();
-	data->list_a = array_tolist(array);
-	data->len_a = len;
-	if (duplicates(data->list_a) || !valid(array))
-	{	
-		if (argc == 1)
-			free_array(array);
-		free_data(data);
-		error();
-	}
-	if (argc == 1)
-		free_array(array);
-	return (data);
-}
 
 int	is_sorted(t_list *list)
 {

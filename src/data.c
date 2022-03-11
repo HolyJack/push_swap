@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:23:07 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 02:54:44 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 22:45:12 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_data	*new_data(void)
 	tmp->flag = 0;
 	tmp->len_a = 0;
 	tmp->len_b = 0;
+	tmp->display_steps = 1;
 	return (tmp);
 }
 

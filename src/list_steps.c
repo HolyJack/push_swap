@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 19:19:03 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:12:55 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/12 00:31:45 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,11 @@ void	reverse_rotate(t_list **head)
 
 void	make_step(t_data *data, char *name)
 {
-	if (!write(1, name, ft_strlen(name)) || !write(1, "\n", 1))
-		return ;
+	if (data->display_steps)
+	{
+		ft_putstr_fd(name, 1);
+		ft_putstr_fd("\n", 1);
+	}
 	if (ft_strncmp(name, "sa", 2) == 0 || ft_strncmp(name, "ss", 2) == 0)
 		swap(&(data->list_a));
 	if (ft_strncmp(name, "sb", 2) == 0 || ft_strncmp(name, "ss", 2) == 0)

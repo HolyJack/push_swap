@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 02:58:16 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:18:29 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 21:12:03 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	is_nbr(char *str)
 	return (1);
 }
 
-int	valid(char **array)
+int	is_valid(char **array)
 {
 	int			i;
 	const int	len = arrlen(array);

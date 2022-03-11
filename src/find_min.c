@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   find_min.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 03:01:10 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 03:01:22 by ejafer           ###   ########.fr       */
+/*   Created: 2022/03/11 02:36:56 by ejafer            #+#    #+#             */
+/*   Updated: 2022/03/11 18:32:27 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	error(void)
+int	find_min(t_list *list)
 {
-	if (write(1, "Error\n", 7))
-		exit(0);
-	exit(0);
+	int	min;
+
+	min = list->val;
+	while (list)
+	{
+		if (list->val < min)
+			min = list->val;
+		list = list->next;
+	}
+	return (min);
+}
+
+int	min(int a, int b)
+{
+	if (a > b)
+		return (b);
+	return (a);
 }

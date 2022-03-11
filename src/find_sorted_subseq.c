@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 03:21:20 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 04:24:06 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 18:28:57 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,47 +29,44 @@ int	max_valid_prev_seq(t_list *list, t_list *score, int val, int n)
 	return (max);
 }
 
+t_list	*maxscore_node(t_list *list, t_list *score, int *max)
+{
+	int	maxscore_val;
+
+	*max = score->val;
+	maxscore_val = list->val;
+	while (list)
+	{
+		if (score->val > *max)
+		{
+			*max = score->val;
+			maxscore_val = list->val;
+		}
+		list = list->next;
+		score = score->next;
+	}
+	return (new_list(maxscore_val));
+}
+
 t_list	*restore_seq(t_list *list, t_list *score)
 {
-	int		i;
-	int		flag;
 	int		max;
 	t_list	*nlist;
 	t_list	*ltmp;
 	t_list	*stmp;
 
-	i = -1;
 	max = 0;
-	ltmp = list;
-	stmp = score;
-	nlist = NULL;
-	while (++i < lstlen(score))
-	{
-		if (max < stmp->val)
-		{
-			max = stmp->val;
-			if (nlist)
-				free(nlist);
-			nlist = new_list(ltmp->val);
-		}
-		ltmp = ltmp->next;
-		stmp = stmp->next;
-	}
+	nlist = maxscore_node(list, score, &max);
 	while (--max)
 	{
 		ltmp = list;
 		stmp = score;
-		flag = 1;
-		while (flag)
+		while (max != stmp->val || ltmp->val > nlist->val)
 		{
-			if (max == stmp->val && ltmp->val < nlist->val)
-			{
-				push_front(&nlist, new_list(ltmp->val));
-				flag = 0;
-			}
 			stmp = stmp->next;
 			ltmp = ltmp->next;
-		}	
+		}
+		push_front(&nlist, new_list(ltmp->val));
 	}
 	free_list(score);
 	return (nlist);

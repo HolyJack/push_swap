@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:07:27 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 04:08:27 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/11 22:48:36 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # define S_THRESHOLD 7
+# define BUFFER_SIZE 1
 
 typedef struct s_list
 {
@@ -37,6 +38,7 @@ typedef struct s_data
 	int		flag;
 	int		len_a;
 	int		len_b;
+	int		display_steps;
 }	t_data;
 
 t_data	*new_data(void);
@@ -66,8 +68,9 @@ t_list	*array_tolist(char **array);
 void	free_array(char **array);
 int		arrlen(char **ptr);
 
-int		valid(char **array);
+int		is_valid(char **array);
 int		duplicates(t_list *list);
+int		find_position(t_list *list, t_list *tomove);
 void	rotate(t_data *data, int rotate_pnt);
 int		is_rotated(t_list *list);
 int		is_sorted(t_list *list);
@@ -77,9 +80,11 @@ void	sort_small(t_data *data);
 void	sort_main(t_data *data);
 t_list	*biggest_sorted(t_data *data);
 void	score(t_data *data);
-int		MAX(int a, int b);
-int		MIN(int a, int b);
+t_data	*parser(char **argv, int argc);
 
+int		max(int a, int b);
+int		min(int a, int b);
+int		ft_putstr_fd(char *s, int fd);
 int		ft_atoi(const char *s);
 int		ft_isdigit(int c);
 int		ft_strncmp(const char *s1, const char *s2, int n);
@@ -88,6 +93,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 char	**ft_split(char const *s, char c);
 int		ft_strlen(const char *s);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
+char	*get_next_line(int fd);
+char	*ft_strdup(const char *s);
 void	error(void);
 
 #endif

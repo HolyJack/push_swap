@@ -12,15 +12,6 @@
 
 #include "push_swap.h"
 
-int	is_sorted(t_list *list)
-{
-	while (list->next && list->val <= list->next->val)
-		list = list->next;
-	if (!list->next)
-		return (1);
-	return (0);
-}
-
 int	is_rotated(t_list *list)
 {
 	int		flag;

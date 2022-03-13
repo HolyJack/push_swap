@@ -26,13 +26,13 @@ SRC_NAMES	=   push_swap parser data list1 list2\
 				find_sorted_subseq list_steps rotate  find_min\
 				find_med find_max ft_atoi ft_strncmp ft_memset\
 				ft_split ft_strlcpy ft_strlen ft_memcpy\
-				ft_putstr_fd ft_isdigit
+				ft_putstr_fd ft_isdigit is_sorted
 
 SRC_NAMES_BONUS	=	checker parser list1 list2 list_steps error\
 					array validation ft_split find_min data ft_strlen\
 					ft_memset ft_strncmp ft_strlcpy ft_atoi ft_memcpy\
 					ft_isdigit get_next_line get_next_line_utils\
-					ft_putstr_fd
+					ft_putstr_fd is_sorted
 
 SRC			=	$(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_NAMES)))
 OBJ			=	$(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_NAMES)))

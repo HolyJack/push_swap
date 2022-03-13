@@ -68,6 +68,7 @@ t_list	*array_tolist(char **array);
 void	free_array(char **array);
 int		arrlen(char **ptr);
 
+int		is_sorted(t_list *list);
 int		is_valid(char **array);
 int		duplicates(t_list *list);
 int		find_position(t_list *list, t_list *tomove);

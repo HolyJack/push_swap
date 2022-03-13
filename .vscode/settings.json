@@ -4,6 +4,7 @@
 		"chrono": "c",
 		"random": "c",
 		"limits": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"typeinfo": "c"
 	}
 }

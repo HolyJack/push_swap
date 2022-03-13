@@ -6,7 +6,7 @@
 /*   By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/11 19:39:27 by ejafer            #+#    #+#             */
-/*   Updated: 2022/03/11 22:54:29 by ejafer           ###   ########.fr       */
+/*   Updated: 2022/03/13 16:58:35 by ejafer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int	main(int argc, char **argv)
 	data = parser(argv + 1, argc - 1);
 	data->display_steps = 0;
 	apply_instructions(data);
-	if (is_sorted(data->list_a))
+	if (is_sorted(data->list_a) && data->len_b == 0)
 		silence = write(1, "OK!\n", 4);
 	else
 		silence = write(1, "KO!\n", 4);

@@ -6,7 +6,7 @@
 #    By: ejafer <ejafer@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/04 19:14:01 by ejafer            #+#    #+#              #
-#    Updated: 2022/03/11 22:53:32 by ejafer           ###   ########.fr        #
+#    Updated: 2022/03/13 16:54:44 by ejafer           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,9 @@ all: $(NAME)
 $(NAME): $(OBJ)
 			$(CC) $(CFLAGS) $(OPFLAGS) $(OBJ) -o $(NAME)
 
-bonus: ${OBJ_BONUS}
+bonus: $(BONUS)
+
+$(BONUS):	${OBJ_BONUS}
 			$(CC) $(CFLAGS) $(OPFLAGS) $(OBJ_BONUS) -o $(BONUS)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(HDR)
@@ -74,4 +76,4 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY: re fclean clean bonus all
+.PHONY: re fclean clean all
